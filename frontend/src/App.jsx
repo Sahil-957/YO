@@ -5,7 +5,6 @@ function App() {
     <div className="text-red-500">
       HEllo
       <button className="btn btn-error">Error</button>
-      <h1>Shail</h1>
     </div>
   );
 }
