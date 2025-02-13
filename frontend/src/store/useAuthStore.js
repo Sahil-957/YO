@@ -1,5 +1,6 @@
 import {create} from 'zustand';
 import {axiosInstance} from '../lib/axios.js';
+import { signup } from '../../../backend/src/controllers/auth.controller.js';
 
 export const useAuthStore = create((set) => ({
     authUser: null,
@@ -20,5 +21,9 @@ export const useAuthStore = create((set) => ({
         set({isCheckingAuth: false});
        }
     },
-})
-);
+
+    signup: async (data) => {
+        
+    }
+
+}));
