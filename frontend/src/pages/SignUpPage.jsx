@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useAuthStore } from "../store/useAuthStore";
-<<<<<<< HEAD
 import {
   MessageSquare,
   User,
@@ -12,16 +11,13 @@ import {
 } from "lucide-react";
 
 import AuthImagePattern from "../components/AuthImagePattern";
-=======
-import { MessageSquare, User, Mail } from "lucide-react";
->>>>>>> parent of 53336f5 (Password)
 
 // import { Link } from "react-router-dom";
 
 const SignUpPage = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
-    fullName: "",
+    fullname: "",
     email: "",
     password: "",
   });
@@ -70,9 +66,9 @@ const SignUpPage = () => {
                 type="text"
                 className={`input input-bordered w-full pl-10`}
                 placeholder="John Doe"
-                value={formData.fullName}
+                value={formData.fullname}
                 onChange={(e) =>
-                  setFormData({ ...formData, fullName: e.target.value })
+                  setFormData({ ...formData, fullname: e.target.value })
                 }
               />
             </div>
@@ -98,7 +94,6 @@ const SignUpPage = () => {
               />
             </div>
           </div>
-<<<<<<< HEAD
 
           {/* Password */}
           <div className="form-control">
@@ -147,25 +142,8 @@ const SignUpPage = () => {
               "Create Account"
             )}
           </button>
-=======
->>>>>>> parent of 53336f5 (Password)
         </form>
-
-        <div className="text-center">
-          <p className="text-base-content/60">
-            Already have an account?{" "}
-            <Link to="/login" className="link link-primary">
-              Sign in
-            </Link>
-          </p>
-        </div>
       </div>
-
-      {/* Right side */}
-      <AuthImagePattern
-        title="Join Our Community."
-        subtitle="People are using our platform to share their stories and connect with others."
-      />
     </div>
   );
 };
