@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useAuthStore } from "../store/useAuthStore";
+<<<<<<< HEAD
 import {
   MessageSquare,
   User,
@@ -11,8 +12,11 @@ import {
 } from "lucide-react";
 
 import AuthImagePattern from "../components/AuthImagePattern";
+=======
+import { MessageSquare, User, Mail } from "lucide-react";
+>>>>>>> parent of 53336f5 (Password)
 
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 const SignUpPage = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -54,7 +58,6 @@ const SignUpPage = () => {
 
         {/* FORM */}
         <form onSubmit={handleSubmit} className="space-y-6">
-          {/* Full Name */}
           <div className="form-control">
             <label className="label">
               <span className="label-text font-medium">Full Name</span>
@@ -95,6 +98,7 @@ const SignUpPage = () => {
               />
             </div>
           </div>
+<<<<<<< HEAD
 
           {/* Password */}
           <div className="form-control">
@@ -143,6 +147,8 @@ const SignUpPage = () => {
               "Create Account"
             )}
           </button>
+=======
+>>>>>>> parent of 53336f5 (Password)
         </form>
 
         <div className="text-center">
