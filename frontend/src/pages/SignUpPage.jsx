@@ -80,7 +80,7 @@ const SignUpPage = () => {
               </div>
               <input
                 type="text"
-                className={`input input-bordered w-full pl-10`}
+                className={`input input-bordered w-full pl-10 pr-40 `}
                 placeholder="John Doe"
                 value={formData.fullName}
                 onChange={(e) =>
