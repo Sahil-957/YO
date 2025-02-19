@@ -144,6 +144,12 @@ const SignUpPage = () => {
           </button>
         </form>
       </div>
+
+      {/* Right side */}
+      <AuthImagePattern
+        title="Join Our Community."
+        subtitle="People are using our platform to share their stories and connect with others."
+      />
     </div>
   );
 };
