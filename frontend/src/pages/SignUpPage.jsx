@@ -11,23 +11,39 @@ import {
 } from "lucide-react";
 
 import AuthImagePattern from "../components/AuthImagePattern";
+import toast from "react-hot-toast";
 
 // import { Link } from "react-router-dom";
 
 const SignUpPage = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
-    fullname: "",
+    fullName: "", // Ensure this matches the backend field name
     email: "",
     password: "",
   });
 
   const { signup, isSigningUp } = useAuthStore();
 
-  const validateForm = () => {};
+  const validateForm = () => {
+    if (!formData.fullName.trim()) return toast.error("Full name is required");
+    if (!formData.email.trim()) return toast.error("Email is required");
+    if (!/\S+@\S+\.\S+/.test(formData.email)) return toast.error("Invalid email format");
+    if (!formData.password) return toast.error("Password is required");
+    if (formData.password.length < 6) return toast.error("Password must be at least 6 characters");
+
+    return true;
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    const success = validateForm();
+
+    if (success === true) {
+      console.log("Form data:", formData); // Debugging line
+      signup(formData);
+    }
   };
 
   return (
@@ -66,9 +82,9 @@ const SignUpPage = () => {
                 type="text"
                 className={`input input-bordered w-full pl-10`}
                 placeholder="John Doe"
-                value={formData.fullname}
+                value={formData.fullName}
                 onChange={(e) =>
-                  setFormData({ ...formData, fullname: e.target.value })
+                  setFormData({ ...formData, fullName: e.target.value })
                 }
               />
             </div>
@@ -144,6 +160,12 @@ const SignUpPage = () => {
           </button>
         </form>
       </div>
+
+      {/* Right side */}
+      <AuthImagePattern
+        title="Join our community"
+        subtitle="Connect with friends, share moments, and stay in touch with your loved ones."
+      />
     </div>
   );
 };
