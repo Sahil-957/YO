@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
-import { useAuthStore } from '../store/useAuthStore'
+import { useState } from "react";
+import { useAuthStore } from "../store/useAuthStore";
 import { Camera, Mail, User } from "lucide-react";
 
 const ProfilePage = () => {
-  const { authUser, isUpdatingProfile , UpdateProfile } = useAuthStore()
+  const { authUser, isUpdatingProfile, updateProfile } = useAuthStore();
   const [selectedImg, setSelectedImg] = useState(null);
+
   const handleImageUpload = async (e) => {
     const file = e.target.files[0];
     if (!file) return;
@@ -18,18 +19,19 @@ const ProfilePage = () => {
       setSelectedImg(base64Image);
       await updateProfile({ profilePic: base64Image });
     };
-  }
+  };
 
   return (
-    <div className='h-screen pt-20'>
-      <div className='max-w-2xl mx-auto p-4 py-8 '>
-        <div className='bg-base-300 rounded-xl p-6 space-y-8'>
-          <div className='text-center'>
-            <h1 className='text-2xl font-semisolid'>profile</h1>
-            <p className='mt-2'>Your profile information</p>
+    <div className="h-screen pt-20">
+      <div className="max-w-2xl mx-auto p-4 py-8">
+        <div className="bg-base-300 rounded-xl p-6 space-y-8">
+          <div className="text-center">
+            <h1 className="text-2xl font-semibold ">Profile</h1>
+            <p className="mt-2">Your profile information</p>
           </div>
 
-          {/* Profile Image */}
+          {/* avatar upload section */}
+
           <div className="flex flex-col items-center gap-4">
             <div className="relative">
               <img
@@ -94,11 +96,9 @@ const ProfilePage = () => {
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </div>
-  )
-}
-
-export default ProfilePage
+  );
+};
+export default ProfilePage;
