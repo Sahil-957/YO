@@ -14,7 +14,7 @@ const Navbar = () => {
             <div className='flex items-center gap-8'>
               <Link to="/" className="flex items-center gap-2.5 hover:opacity-80 transition-all">
                 <div className="size-9 rounded-lg bg-primary/10 flex items-center justify-center">
-                  <MessageSquare className="w-6 h-6 text-secondary" />
+                  <MessageSquare className="w-6 h-6 text-primary" />
                 </div>
               <h1 className="text-3xl font-bold italic ">YO!</h1>
             </Link>
