@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useAuthStore } from "../store/useAuthStore";
 import { Camera, Mail, User } from "lucide-react";
+import Input from "../components/input";
 
 const ProfilePage = () => {
   const { authUser, isUpdatingProfile, updateProfile } = useAuthStore();
@@ -64,6 +65,23 @@ const ProfilePage = () => {
               {isUpdatingProfile ? "Uploading..." : "Click the camera icon to update your photo"}
             </p>
           </div>
+
+             {/* <Input icon={User}>
+              {{
+                description: "Username:",
+                placeholder: "Enter your username",
+                id: "username",
+                type: "text",
+              }}
+            </Input>
+            <Input icon={Mail}>
+              {{
+                description: "Mail",
+                placeholder: "Enter your Mail",
+                id: "mail",
+                type: "text",
+              }}
+            </Input> */}
 
           <div className="space-y-6">
             <div className="space-y-1.5">
