@@ -66,7 +66,7 @@ const ProfilePage = () => {
             </p>
           </div>
 
-             {/* <Input icon={User}>
+             <Input icon={User}>
               {{
                 description: "Username:",
                 placeholder: "Enter your username",
@@ -81,7 +81,7 @@ const ProfilePage = () => {
                 id: "mail",
                 type: "text",
               }}
-            </Input> */}
+            </Input>
 
           <div className="space-y-6">
             <div className="space-y-1.5">
